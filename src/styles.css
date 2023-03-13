@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+app root {
+    display: block;
+    width: 100vw;
+    height: auto;
+    place-items: center;
+}
+table th{
+    font-size: 1.5rem;
+    padding: 1.2rem;
+}
+table tr td {
+    padding: 1.125rem;
+    background-color: #121212;
+    color: white;
+    
+}
