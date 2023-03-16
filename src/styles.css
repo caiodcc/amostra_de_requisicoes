@@ -1,10 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&display=swap');
+:root {
+    --main-font: font-family: 'Crimson Text', serif;
+    --grey-main: #121212;
+    --wt: #fff;
+    --red: #8e0707;
+}
+body {
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+
+}
 app root {
     display: block;
     width: 100vw;
     height: auto;
     place-items: center;
+    align-items: center;
 }
 table th{
     font-size: 1.5rem;
@@ -15,4 +28,8 @@ table tr td {
     background-color: #121212;
     color: white;
     
+}
+input {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
 }

@@ -1,0 +1,31 @@
+<div class="container mx-auto">
+    
+    <form class="col-md-6 mx-auto" [formGroup]="calculo">
+        <h1 class="mb-5 text-center">Calculadora de Dieta Flexível</h1>
+
+        <!-- inputs básicos -->
+    <div class="row w-25 mx-auto mb-2"> 
+    <label for="altura" class="text-center">Altura</label>
+    <input type="number" class="text-center"  formControlName="altura" required>
+    </div>
+
+    <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
+    <label for="peso" class="text-center">Peso</label>
+    <input type="number" class="text-center" formControlName="peso" required>
+    </div>
+
+    <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
+    <label for="idade" class="text-center">Idade</label>
+    <input type="number" class="text-center" formControlName="idade" required>
+    </div>
+
+    <!-- input sexo -->
+    <app-botao-switch></app-botao-switch>
+    <!-- atividade -->
+    <app-list-options class="d-flex justify-content-center mt-3 mb-3"></app-list-options>
+    <!-- calcular -->
+    <app-button-send class="row mx-auto"></app-button-send>
+    
+</form>
+
+</div>
