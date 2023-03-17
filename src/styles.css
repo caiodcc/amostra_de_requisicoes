@@ -7,6 +7,14 @@
     --wt: #fff;
     --red: #8e0707;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+
 body {
     font-family: var(--main-font);
     font-size: 1.2rem;

@@ -11,3 +11,90 @@ input {
     border: 1px solid #121212;
     border-radius: 0.7rem;
 }
+
+body {
+    font-family: var(--main-font);
+    font-size: 2rem;
+    line-height: 1.42em;
+  }
+  .container th h1 {
+        font-weight: bold;
+        font-size: 1.2em;
+    text-align: left;
+    color: var(--red);
+  
+  }
+  
+  .container td {
+        font-weight: normal;
+        font-size: 1.325rem;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+         -moz-box-shadow: 0 2px 2px -2px #0E1119;
+              box-shadow: 0 2px 2px -2px #0E1119;
+  }
+  
+  .container {
+        text-align: left;
+        overflow: hidden;
+        width: 80vw;
+        height: 50vh;
+        margin: 0 auto;
+    display: table;
+    padding: 0 0 8em 0;
+  }
+  
+  .container td, .container th {
+        padding-bottom: 2%;
+        padding-top: 2%;
+    padding-left:2%;  
+  }
+  #back {
+    text-decoration: none;
+    color: var(--red);
+    font-size: 1.5rem;
+  }
+  #back:hover {
+    color: var(--grey-main);
+    transition: 1s;
+  }
+  /* Background-color of the odd rows */
+  .container tr:nth-child(odd) {
+        background-color: var(--wt);
+  }
+  
+  /* Background-color of the even rows */
+  .container tr:nth-child(even) {
+        background-color: var(--wt);
+  }
+  
+  .container th {
+        background-color: var(--wt);
+  }
+  
+  .container td:first-child { color: (--wt); }
+  
+  .container tr:hover {
+     background-color: var(--red);
+  -webkit-box-shadow: 0 6px 6px -6px #0E1119;
+         -moz-box-shadow: 0 6px 6px -6px #0E1119;
+              box-shadow: 0 6px 6px -6px #0E1119;
+  }
+  
+  .container td:hover {
+    background-color: var(--red);
+    color: (--wt);
+    font-weight: bold;
+    
+    box-shadow: var(--red) -1px 1px, var(--red) -2px 2px, var(--red) -3px 3px, var(--red) -4px 4px, var(--red) -5px 5px, var(--red) -6px 6px;
+    transform: translate3d(6px, -6px, 0);
+    
+    transition-delay: 0s;
+        transition-duration: 0.4s;
+        transition-property: all;
+    transition-timing-function: line;
+  }
+  
+  @media (max-width: 800px) {
+  .container td:nth-child(4),
+  .container th:nth-child(4) { display: none; }
+  }

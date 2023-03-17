@@ -1,31 +1,57 @@
-<div class="container mx-auto">
-    
-    <form class="col-md-6 mx-auto" [formGroup]="calculo"(submit)="onSubmit()">
+<div class="container mx-auto" *ngIf="!pronto">
+
+    <form class="col-md-6 mx-auto" [formGroup]="calculo" (submit)="onSubmit()">
         <h1 class="mb-5 text-center">Calculadora de Dieta Flexível</h1>
 
         <!-- inputs básicos -->
-    <div class="row w-25 mx-auto mb-2" [formGroup]="calculo"> 
-    <label for="altura" class="text-center">Altura</label>
-    <input type="number" class="text-center"  formControlName="altura" required>
+        <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
+            <label for="altura" class="text-center">Altura</label>
+            <input type="number" class="text-center" formControlName="altura" required>
+        </div>
+
+        <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
+            <label for="peso" class="text-center">Peso</label>
+            <input type="number" class="text-center" formControlName="peso" required>
+        </div>
+
+        <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
+            <label for="idade" class="text-center">Idade</label>
+            <input type="number" class="text-center" formControlName="idade" required>
+        </div>
+
+        <!-- input sexo -->
+        <app-botao-switch [form]="calculo"></app-botao-switch>
+        <!-- atividade -->
+        <app-list-options [calculo]="calculo" class="d-flex justify-content-center mt-3 mb-3"></app-list-options>
+        <!-- calcular -->
+        <app-button-send class="row mx-auto"></app-button-send>
+
+    </form>
+
+  
     </div>
-
-    <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
-    <label for="peso" class="text-center">Peso</label>
-    <input type="number" class="text-center" formControlName="peso" required>
-    </div>
-
-    <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
-    <label for="idade" class="text-center">Idade</label>
-    <input type="number" class="text-center" formControlName="idade" required>
-    </div>
-
-    <!-- input sexo -->
-    <app-botao-switch [form]="calculo"></app-botao-switch>
-    <!-- atividade -->
-    <app-list-options [calculo]="calculo" class="d-flex justify-content-center mt-3 mb-3"></app-list-options>
-    <!-- calcular -->
-    <app-button-send class="row mx-auto"></app-button-send>
-    
-</form>
-
-</div>
+    <table class="container" *ngIf="pronto">
+        <thead>
+            <tr>
+                <th><h1>Calorias</h1></th>
+                <th><h1>Carboídratos</h1></th>
+                <th><h1>Proteína</h1></th>
+                <th><h1>Gordura</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Cutting</td>
+                <td>{{ resultado.gastoCal }}</td>
+                <td>120</td>
+                <td>52</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Bulking</td>
+                <td>7326</td>
+                <td>10437</td>
+                <td>00:51:22</td>
+            </tr>
+        </tbody>
+    </table>
