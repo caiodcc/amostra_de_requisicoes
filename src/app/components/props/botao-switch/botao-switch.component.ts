@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CalcComponent } from '../../calc/calc.component';
 
@@ -8,8 +8,8 @@ import { CalcComponent } from '../../calc/calc.component';
   templateUrl: './botao-switch.component.html',
   styleUrls: ['./botao-switch.component.css']
 })
-export class BotaoSwitchComponent extends CalcComponent {
-
+export class BotaoSwitchComponent {
+  @Input() public form: FormGroup;
   
   
 

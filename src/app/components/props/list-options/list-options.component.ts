@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CalcComponent } from '../../calc/calc.component';
 
@@ -8,7 +8,7 @@ import { CalcComponent } from '../../calc/calc.component';
   templateUrl: './list-options.component.html',
   styleUrls: ['./list-options.component.css']
 })
-export class ListOptionsComponent extends CalcComponent {
+export class ListOptionsComponent {
 
-  
+  @Input() public calculo: FormGroup;
 }

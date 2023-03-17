@@ -10,59 +10,49 @@ import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/
 
 
 export class CalcComponent implements OnInit {
-  
-
-
- 
-    peso : number;
-    altura : number;
-    atividade: number;
-    sexo: string;
-    idade: number;
-    public calculo: FormGroup;
+    
+   public calculo: FormGroup;
   
   constructor(private fb : FormBuilder){
-
-      }
-  ngOnInit() {
     this.calculo = this.fb.group({
-      'peso' :['', Validators.required],
-      'altura' :['', Validators.required],
-      'atividade':['', Validators.required],
-      'sexo': ['', Validators.required],
-      'idade':['', Validators.required]
-      
-
-    })
-    
-   
-  
+      peso: ['', Validators.required],
+      altura: ['', Validators.required],
+      atividade: ['', Validators.required],
+      sexo: ['', Validators.required],
+      idade: ['', Validators.required]
+    });
   }
+  ngOnInit() {
+    
+  }
+    
+  
     onSubmit(){
 
-      this.calculo = this.fb.group({
-        'peso' :['', Validators.required],
-        'altura' :['', Validators.required],
-        'atividade':['', Validators.required],
-        'sexo': ['', Validators.required],
-        'idade':['', Validators.required]
-        
+      if (this.calculo.invalid) {
+        console.log('Form INVALID!');
+        console.log(this.calculo);
+        return;
+      };
   
-      })
       const data = {
-        peso : this.calculo.value.peso,
-        altura : this.calculo.value.altura,
-        sexo : this.calculo.value.sexo,
+        peso: this.calculo.value.peso,
+        altura: this.calculo.value.altura,
+        sexo: this.calculo.value.sexo,
         atividade: this.calculo.value.atividade,
         idade: this.calculo.value.idade
-
-      }
-      console.log(data)
-
-   
-
-    }
-   
-    
   
-}
+      };
+     
+      console.log(data);
+  
+  
+    }
+  
+  }
+  
+
+
+   
+
+    

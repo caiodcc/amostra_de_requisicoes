@@ -8,7 +8,7 @@ import { CalcComponent } from '../../calc/calc.component';
   templateUrl: './button-send.component.html',
   styleUrls: ['./button-send.component.css']
 })
-export class ButtonSendComponent extends CalcComponent{
+export class ButtonSendComponent {
 
  
 }
