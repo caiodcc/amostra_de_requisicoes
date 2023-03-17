@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
  
 import { Router } from '@angular/router';
+import { MacroBulkingService } from '../services/macro-bulking.service';
+import { MacronutrientesService } from '../services/macronutrientes.service';
 import { ResultadoService } from '../services/resultado.service';
 
 
@@ -16,12 +18,13 @@ export class CalcComponent implements OnInit {
 
   public calculo: FormGroup;
 
-  
- 
+
+ public gastoCalCut: number
+ public gastoCalBulk: number
 
   public pronto: boolean;
  
-    constructor(private fb: FormBuilder, private router: Router, public resultado: ResultadoService) {
+    constructor(private fb: FormBuilder, public resultado: ResultadoService, public macro: MacronutrientesService, public macroBulk: MacroBulkingService) {
     this.calculo = this.fb.group({
       peso: ['', Validators.required],
       altura: ['', Validators.required],
@@ -91,9 +94,41 @@ export class CalcComponent implements OnInit {
     this.resultado.idade = data.idade
     console.log(this.resultado)
 
-    
-    
+    // Calculo macronutrientes
+
+    this.gastoCalBulk = gastoCal + 500
+    this.gastoCalCut = gastoCal * 0.75
+
+  
+    this.macro.proteina = this.gastoCalCut *  0.4 / 4;
+    this.macro.gordura = this.gastoCalCut *  0.4 / 9;
+    this.macro.carbo = this.gastoCalCut * 0.4 / 4;
+
+
+    this.macroBulk.proteinaBulk = this.gastoCalBulk * 0.3 / 4;
+    this.macroBulk.gorduraBulk = this.gastoCalBulk * 0.2 / 9;
+    this.macroBulk.carboBulk = this.gastoCalBulk * 0.5 / 4;
+  
+
+    // Convertendo macro para inteiros
+
+    this.macro.proteina = Math.round(this.macro.proteina)
+    this.macro.carbo = Math.round(this.macro.carbo)
+    this.macro.gordura = Math.round(this.macro.gordura)
+
+
+
+    this.macroBulk.proteinaBulk = Math.round(this.macroBulk.proteinaBulk)
+    this.macroBulk.gorduraBulk = Math.round(this.macroBulk.gorduraBulk)
+    this.macroBulk.carboBulk = Math.round(this.macroBulk.carboBulk)
+  
+    console.log(this.macro)
+
+
     this.pronto = true
+
+
+
 
   }
 

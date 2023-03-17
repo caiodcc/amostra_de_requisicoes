@@ -33,6 +33,7 @@
     <table class="container" *ngIf="pronto">
         <thead>
             <tr>
+                <th><h1>Dieta</h1></th>
                 <th><h1>Calorias</h1></th>
                 <th><h1>Carboídratos</h1></th>
                 <th><h1>Proteína</h1></th>
@@ -42,16 +43,17 @@
         <tbody>
             <tr>
                 <td>Cutting</td>
-                <td>{{ resultado.gastoCal }}</td>
-                <td>120</td>
-                <td>52</td>
-                <td>30</td>
+                <td>{{ gastoCalCut }}</td>
+                <td>{{ macro.carbo }}</td>
+                <td>{{ macro.proteina }}</td>
+                <td>{{ macro.gordura }}</td>
             </tr>
             <tr>
                 <td>Bulking</td>
-                <td>7326</td>
-                <td>10437</td>
-                <td>00:51:22</td>
+                <td>{{ gastoCalBulk }}</td>
+                <td>{{ macroBulk.carboBulk }}</td>
+                <td>{{ macroBulk.proteinaBulk}}</td>
+                <td>{{ macroBulk.gorduraBulk }}</td>        
             </tr>
         </tbody>
     </table>
