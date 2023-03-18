@@ -1,7 +1,7 @@
 <div class="container mx-auto" *ngIf="!pronto">
 
     <form class="col-md-6 mx-auto" [formGroup]="calculo" (submit)="onSubmit()">
-        <h1 class="mb-5 text-center">Calculadora de Dieta Flexível</h1>
+        <h1 class="mb-4 text-center">Calculadora de Dieta Flexível</h1>
 
         <!-- inputs básicos -->
         <div class="row w-25 mx-auto mb-2" [formGroup]="calculo">
@@ -30,6 +30,7 @@
 
   
     </div>
+    <p class="text-center mb-5" style="font-size: 2rem">Desenvolvido por Caio Marques</p>
     <table class="container" *ngIf="pronto">
         <thead>
             <tr>

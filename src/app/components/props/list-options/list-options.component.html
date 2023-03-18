@@ -1,7 +1,7 @@
 <form [formGroup]="calculo">
 	<input id="a" type="radio" name="atividade" formControlName="atividade" value="1.2">
 	<label for="a"><span></span>Sedentário</label>
-	<input id="b" type="radio" name="atividade" formControlName="atividade" value="1.55">
+	<input id="b" type="radio" name="atividade" formControlName="atividade" [(ngModel)]="isChecked" value="1.55">
 	<label for="b"><span></span>Pouco ativo</label>
 	<input id="c" type="radio" name="atividade" formControlName="atividade" value="1.9">
 	<label for="c"><span></span>Muito ativo</label>

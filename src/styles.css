@@ -23,7 +23,8 @@ body {
 app root {
     display: block;
     width: 100vw;
-    height: auto;
+    height: 100vh;
+    max-height: 100vh;
     place-items: center;
     align-items: center;
 }

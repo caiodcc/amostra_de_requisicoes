@@ -11,4 +11,11 @@ import { CalcComponent } from '../../calc/calc.component';
 export class ListOptionsComponent {
 
   @Input() public calculo: FormGroup;
+
+  
+  isChecked = 1.22;
+
+  constructor(){
+    
+  }
 }
